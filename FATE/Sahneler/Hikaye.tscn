@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Yazı Tipleri/TIMESBI.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://Scriptler/Hikaye.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 63.9194
+margin_top = 37.1886
+margin_right = 1512.92
+margin_bottom = 970.189
+custom_fonts/font = SubResource( 1 )
+text = "    Cebinden zar zor da olsa anahtarı buldu. Deliği şans eseri bulup kapıyı açtı. İçeri yavaşça adımını atıp kapıyı kapattı. Gayet sakin adımlarla salona yöneldi. Odada lamba yanmamasına rağmen sokak lambasından süzülen ışık, perdenin arasından odayı az da olsa aydınlatıyordu. Odanın kenarında duran biraz eskimiş deri koltuğa yürüdü. Koltuğa otururken hala yağmakta olan yağmurun ardından kalan paltosundaki su damlalarının tahta zemine süzülüşünü izledi. Tahta zeminden sonra siyah postalları dikkatini çekti. Ne zaman almıştı bunu, ne zaman bu kadar eskimişti? En önemlisi bu çamur nereden geliyordu? Bulaşalı fazla olmamıştı sanırım. Daha yumuşak ve tazeydi. Hatırlayamıyordu nedense. Biraz durakladı. En son neyi hatırlıyordu? Hiçbir fikri yoktu. Kurumuş dudaklarından küfür etmek istedi. Edemedi, ona bile hali yoktu. Paltosun iç cebinden yarısı boş olan bir sigara paketi çıkardı. Kapağını kaldırıp hafif titreyen eliyle bir sigara çıkardı.Sanırım evi aldığından beri kımıldamadan duran sehpanın üzerinden çakmağa uzandı. Sigarasını yakarken cama vuran yağmur sesini dinledi. Sigarasından bir fırt çekerken yorgunluktan kısılmış ve hafif morarmış gözlerini kapattı. Sigarasını içine çekerden çıkarttığı o çıtırtı sesi tüm odada yankılanıyordu sanki. Ev o kadar boş ve sessizdi. Bitmekte olan sigarasını söndürmek için yanındaki sehpadan küllüğe uzandı. Küllüğün içindeki onlarca içilmiş sigaralardan arda kalan izmaritler arasından boş bir yer bulup sigarasını söndürdü.
+
+	Derin bir nefes aldı. Önüne düşen ıslak saçlarını geriye doğru atıp ayağa kalktı. Yatağa doğru yürürken eskimiş tahta parkelerin çıkardıkları sesler ona eşlik ediyordu. Odanın kapısından içeri girince içinde garip bir his oluştu. Eliyle karanlık odayı aydınlatmak için duvardaki anahtarı yokladı. Lamba açılınca gözleri birden kısıldı. Işık huzmeleri sanki gözlerini kör edecekti. Birkaç adım atıp askıya ıslak paltosunu astı yavaşça. Askının yanındaki hafif kirli aynaya yöneldi. Kendi yüzüne baktı. Yorgun, yaşlanmış, sessiz yüzüne. O an anladı artık kendisinden hiçbir şey kalmadığını. Bırakın kendisini, sanırım bu dünyada onun için bir şey kalmamıştı.
+"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_gec" type="Button" parent="."]
+margin_left = 15.5152
+margin_top = 9.649
+margin_right = 1853.52
+margin_bottom = 1033.65
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="btn_gec" to="." method="_on_btn_gec_pressed"]

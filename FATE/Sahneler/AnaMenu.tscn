@@ -1,0 +1,99 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Yazı Tipleri/GRAPHIC PSYCHOPATHY.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scriptler/AnaMenu.gd" type="Script" id=2]
+[ext_resource path="res://Odalar/Menu.png" type="Texture" id=3]
+[ext_resource path="res://Sesler/Fon.mp3" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 150
+outline_size = 3
+outline_color = Color( 0.239216, 0.247059, 0.188235, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Yazı Tipleri/GRAPHIC PSYCHOPATHY.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 54
+font_data = SubResource( 2 )
+
+[node name="AnaMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.474121
+margin_top = 4.99282
+margin_right = 0.474121
+margin_bottom = 4.9928
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Sprite" parent="."]
+position = Vector2( 805.925, 551.896 )
+scale = Vector2( 0.851241, 0.787208 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="İsim" type="Label" parent="."]
+margin_left = 72.0
+margin_top = 9.0
+margin_right = 663.0
+margin_bottom = 274.0
+custom_fonts/font = SubResource( 1 )
+text = "Fate"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_baslat" type="Button" parent="."]
+margin_left = 174.931
+margin_top = 248.863
+margin_right = 559.931
+margin_bottom = 424.863
+custom_fonts/font = SubResource( 3 )
+text = "Basla"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_cıkıs" type="Button" parent="."]
+margin_left = 170.607
+margin_top = 435.104
+margin_right = 555.607
+margin_bottom = 611.104
+custom_fonts/font = SubResource( 3 )
+text = "CIKIS"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_hakkında" type="Button" parent="."]
+margin_left = 1158.15
+margin_top = 636.47
+margin_right = 1523.15
+margin_bottom = 881.47
+custom_fonts/font = SubResource( 3 )
+text = "OYUN  HAKKINDA"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+
+[connection signal="pressed" from="btn_baslat" to="." method="_on_btn_baslat_pressed"]
+[connection signal="pressed" from="btn_cıkıs" to="." method="_on_btn_cks_pressed"]
+[connection signal="pressed" from="btn_hakkında" to="." method="_on_btn_hakknda_pressed"]

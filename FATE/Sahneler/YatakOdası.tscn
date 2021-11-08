@@ -1,0 +1,200 @@
+[gd_scene load_steps=42 format=2]
+
+[ext_resource path="res://Karakter/Sagdan/Sagdan2/3.png" type="Texture" id=1]
+[ext_resource path="res://Karakter/Sagdan/Sagdan2/2.png" type="Texture" id=2]
+[ext_resource path="res://Karakter/Sagdan/Sagdan2/4.png" type="Texture" id=3]
+[ext_resource path="res://Karakter/Sagdan/Sagdan2/5.png" type="Texture" id=4]
+[ext_resource path="res://Karakter/Sagdan/Sagdan2/1.png" type="Texture" id=5]
+[ext_resource path="res://Karakter/Soldan/Soldan2/6.png" type="Texture" id=6]
+[ext_resource path="res://Karakter/önden/5.png" type="Texture" id=7]
+[ext_resource path="res://Sesler/Yağmur.mp3" type="AudioStream" id=8]
+[ext_resource path="res://Karakter/Soldan/Soldan2/3.png" type="Texture" id=9]
+[ext_resource path="res://Sesler/Yürüme.mp3" type="AudioStream" id=10]
+[ext_resource path="res://Karakter/Arkadan/Arkadan2/6.png" type="Texture" id=11]
+[ext_resource path="res://Karakter/Sagdan/Sagdan2/7.png" type="Texture" id=12]
+[ext_resource path="res://Karakter/Soldan/Soldan2/2.png" type="Texture" id=13]
+[ext_resource path="res://Karakter/önden/8.png" type="Texture" id=14]
+[ext_resource path="res://Karakter/önden/1.png" type="Texture" id=15]
+[ext_resource path="res://Karakter/Sagdan/Sagdan2/6.png" type="Texture" id=16]
+[ext_resource path="res://Karakter/önden/4.png" type="Texture" id=17]
+[ext_resource path="res://Karakter/önden/6.png" type="Texture" id=18]
+[ext_resource path="res://Karakter/önden/3.png" type="Texture" id=19]
+[ext_resource path="res://Karakter/Soldan/Soldan2/1.png" type="Texture" id=20]
+[ext_resource path="res://Karakter/Arkadan/Arkadan2/7.png" type="Texture" id=21]
+[ext_resource path="res://Karakter/Soldan/Soldan2/7.png" type="Texture" id=22]
+[ext_resource path="res://Karakter/Soldan/Soldan2/5.png" type="Texture" id=23]
+[ext_resource path="res://Karakter/Arkadan/Arkadan2/2.png" type="Texture" id=24]
+[ext_resource path="res://Karakter/Arkadan/Arkadan2/3.png" type="Texture" id=25]
+[ext_resource path="res://Odalar/Yatak Odası.png" type="Texture" id=26]
+[ext_resource path="res://Karakter/Arkadan/Arkadan2/1.png" type="Texture" id=27]
+[ext_resource path="res://Karakter/Arkadan/Arkadan2/8.png" type="Texture" id=28]
+[ext_resource path="res://Karakter/önden/2.png" type="Texture" id=29]
+[ext_resource path="res://Karakter/önden/7.png" type="Texture" id=30]
+[ext_resource path="res://Karakter/Soldan/Soldan2/4.png" type="Texture" id=31]
+[ext_resource path="res://Karakter/Arkadan/Arkadan2/5.png" type="Texture" id=32]
+[ext_resource path="res://Scriptler/Oyuncu.gd" type="Script" id=33]
+[ext_resource path="res://Scriptler/YatakOdası.gd" type="Script" id=34]
+[ext_resource path="res://FREESCPT.TTF" type="DynamicFontData" id=35]
+
+[sub_resource type="PhysicsMaterial" id=1]
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( -142.591, -46.1931 )
+b = Vector2( 963.271, 298.189 )
+
+[sub_resource type="ImageTexture" id=3]
+storage = 1
+lossy_quality = 0.23
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+font_data = ExtResource( 35 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 29 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 7 ), ExtResource( 18 ), ExtResource( 30 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "on",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 16 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "sag",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 31 ), ExtResource( 23 ), ExtResource( 6 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "sol",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 32 ), ExtResource( 11 ), ExtResource( 21 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "arka",
+"speed": 5.0
+} ]
+
+[sub_resource type="SegmentShape2D" id=6]
+a = Vector2( 121.025, -3.45935 )
+b = Vector2( -128.487, -5.94232 )
+
+[node name="Yatak Odası" type="Node2D"]
+script = ExtResource( 34 )
+
+[node name="OdaSprite" type="Sprite" parent="."]
+position = Vector2( 801.382, 444.722 )
+scale = Vector2( 0.831989, 0.826178 )
+texture = ExtResource( 26 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DuvarEngel" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2( 884.546, 705.765 )
+physics_material_override = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DuvarEngel"]
+polygon = PoolVector2Array( 716.682, -171.769, 378.023, -213.822, 316.62, -179.116, 46.9825, -233.845, -83.8318, -253.867, -83.8318, -224.501, -372.014, -174.025, -571.311, -234.321, -879.818, -191.014, -868.492, -704.482, 715.493, -708.101 )
+
+[node name="YerEngel" type="StaticBody2D" parent="."]
+position = Vector2( 146.503, 597.531 )
+physics_material_override = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YerEngel"]
+shape = SubResource( 2 )
+
+[node name="btn_salon" type="Button" parent="."]
+margin_left = 30.4314
+margin_top = 19.2895
+margin_right = 164.239
+margin_bottom = 58.2895
+text = "Salon"
+icon = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_banyo" type="Button" parent="."]
+margin_left = 28.1864
+margin_top = 69.8003
+margin_right = 161.994
+margin_bottom = 108.8
+text = "Banyo"
+icon = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_cıkıs" type="Button" parent="."]
+margin_left = 1359.0
+margin_top = 27.0
+margin_right = 1505.0
+margin_bottom = 93.0
+custom_fonts/font = SubResource( 4 )
+text = "CIKIS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Oyuncu" type="KinematicBody2D" parent="."]
+position = Vector2( 425.246, 402.299 )
+rotation = -0.0226893
+script = ExtResource( 33 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Oyuncu"]
+position = Vector2( -2.41719, -25.9513 )
+scale = Vector2( 0.841015, 0.638974 )
+frames = SubResource( 5 )
+animation = "on"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Oyuncu"]
+position = Vector2( 2.90125, 156.558 )
+shape = SubResource( 6 )
+
+[node name="Yagmur" type="AudioStreamPlayer2D" parent="Oyuncu"]
+position = Vector2( -882.431, -600.524 )
+rotation = 0.0226893
+stream = ExtResource( 8 )
+volume_db = 21.224
+autoplay = true
+
+[node name="Yurume1" type="AudioStreamPlayer2D" parent="Oyuncu"]
+position = Vector2( -882.431, -600.524 )
+rotation = 0.0226893
+stream = ExtResource( 10 )
+volume_db = 8.0
+attenuation = 0.116629
+
+[node name="Yurume2" type="AudioStreamPlayer2D" parent="Oyuncu"]
+position = Vector2( -882.431, -600.524 )
+rotation = 0.0226893
+stream = ExtResource( 10 )
+volume_db = 8.0
+attenuation = 0.116629
+
+[node name="Yurume3" type="AudioStreamPlayer2D" parent="Oyuncu"]
+position = Vector2( -882.431, -600.524 )
+rotation = 0.0226893
+stream = ExtResource( 10 )
+volume_db = 8.0
+attenuation = 0.116629
+
+[node name="Yurume4" type="AudioStreamPlayer2D" parent="Oyuncu"]
+position = Vector2( -882.431, -600.524 )
+rotation = 0.0226893
+stream = ExtResource( 10 )
+volume_db = 8.0
+attenuation = 0.116629
+
+[connection signal="pressed" from="btn_salon" to="." method="_on_btn_salon_pressed"]
+[connection signal="pressed" from="btn_banyo" to="." method="_on_btn_banyo_pressed"]
+[connection signal="pressed" from="btn_cıkıs" to="." method="_on_btn_cks_pressed"]
