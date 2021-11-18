@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Yazı Tipleri/TIMESBI.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://Yazı Tipleri/bg.png" type="Texture" id=2]
+[ext_resource path="res://Scriptler/Kanepe/Kanepe4.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 52
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 756.713, 448.66 )
+scale = Vector2( 0.810202, 0.810202 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 64.0
+margin_top = 37.0
+margin_right = 1345.0
+margin_bottom = 468.0
+custom_fonts/font = SubResource( 1 )
+text = "Şişenin yarısına gelmişti, son bardağını içerken gözleri artık net görmemeye başladı. Yağmur yağmaya devam ediyordu. Birden ayağa kalktı. Dışarı çıkıp hava almak istedi ve ;"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Çıkma" type="Label" parent="."]
+margin_left = 968.0
+margin_top = 691.0
+margin_right = 1339.0
+margin_bottom = 880.0
+custom_fonts/font = SubResource( 1 )
+text = "Evde Kal"
+autowrap = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Çıkma"]
+anchor_left = 0.07
+anchor_top = 0.243
+anchor_right = 0.853
+anchor_bottom = 0.28
+margin_left = -57.97
+margin_top = -74.927
+margin_right = 116.537
+margin_bottom = 128.08
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Çık" type="Label" parent="."]
+margin_left = 78.0
+margin_top = 695.0
+margin_right = 687.0
+margin_bottom = 862.0
+custom_fonts/font = SubResource( 1 )
+text = "Dışarı Çık"
+autowrap = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Çık"]
+margin_left = -20.0
+margin_top = -7.0
+margin_right = 418.0
+margin_bottom = 101.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Çıkma/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Çık/Button" to="." method="_on_Button_pressed"]

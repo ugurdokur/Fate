@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Yazı Tipleri/TIMESBI.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://Yazı Tipleri/bg.png" type="Texture" id=2]
+[ext_resource path="res://Scriptler/Kanepe/Kanepe1.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 73
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 756.713, 448.66 )
+scale = Vector2( 0.810202, 0.810202 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 64.0
+margin_top = 37.0
+margin_right = 1345.0
+margin_bottom = 272.0
+custom_fonts/font = SubResource( 1 )
+text = "Kanepeye doğru yöneldi ve yavaşça oturdu. Baş ağrısından ölecek gibiydi. Geçmesi için bi sigara içti. Hafif yorgunluk çöktü üstüne;"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Kalk" type="Label" parent="."]
+margin_left = 806.0
+margin_top = 591.0
+margin_right = 1095.0
+margin_bottom = 780.0
+custom_fonts/font = SubResource( 1 )
+text = "Kalk"
+autowrap = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Kalk"]
+anchor_left = 0.07
+anchor_top = 0.243
+anchor_right = 0.5
+anchor_bottom = 0.275
+margin_left = -58.23
+margin_top = -74.927
+margin_right = 85.5
+margin_bottom = 83.025
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Uyu" type="Label" parent="."]
+margin_left = 310.0
+margin_top = 597.0
+margin_right = 521.0
+margin_bottom = 744.0
+custom_fonts/font = SubResource( 1 )
+text = "Uyu"
+autowrap = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Uyu"]
+margin_left = -22.0
+margin_top = -3.0
+margin_right = 178.0
+margin_bottom = 105.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Kalk/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Uyu/Button" to="." method="_on_Button_pressed"]

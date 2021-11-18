@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Yazı Tipleri/TIMESBI.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://Scriptler/Hikaye1.gd" type="Script" id=2]
+[ext_resource path="res://Fotoğraflar/hikayebg.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0.180392, 0.180392, 0.180392, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_hikaye1" type="Button" parent="."]
+margin_left = 15.5152
+margin_top = 9.649
+margin_right = 1853.52
+margin_bottom = 1033.65
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+margin_right = 1546.0
+margin_bottom = 1020.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hikayebg" type="Sprite" parent="."]
+position = Vector2( 770.089, 507.551 )
+scale = Vector2( 0.808828, 0.805116 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 63.9194
+margin_top = 37.1886
+margin_right = 1512.92
+margin_bottom = 970.189
+custom_fonts/font = SubResource( 1 )
+text = "    Cebinden zar zor da olsa anahtarı buldu. Deliği şans eseri bulup kapıyı açtı. İçeri yavaşça adımını atıp kapıyı kapattı. Gayet sakin adımlarla salona yöneldi. Odada lamba yanmamasına rağmen sokak lambasından süzülen ışık, perdenin arasından odayı az da olsa aydınlatıyordu. Odanın kenarında duran biraz eskimiş deri koltuğa yürüdü. Koltuğa otururken hala yağmakta olan yağmurun ardından kalan paltosundaki su damlalarının tahta zemine süzülüşünü izledi. Tahta zeminden sonra siyah postalları dikkatini çekti. Ne zaman almıştı bunu, ne zaman bu kadar eskimişti? En önemlisi bu çamur nereden geliyordu? Bulaşalı fazla olmamıştı sanırım. Daha yumuşak ve tazeydi. Hatırlayamıyordu nedense. Biraz durakladı. En son neyi hatırlıyordu? Hiçbir fikri yoktu. Kurumuş dudaklarından küfür etmek istedi. Edemedi, ona bile hali yoktu. Paltosun iç cebinden yarısı boş olan bir sigara paketi çıkardı. Kapağını kaldırıp hafif titreyen eliyle bir sigara çıkardı.Sanırım evi aldığından beri kımıldamadan duran sehpanın üzerinden çakmağa uzandı. Sigarasını yakarken cama vuran yağmur sesini dinledi. Sigarasından bir fırt çekerken yorgunluktan kısılmış ve hafif morarmış gözlerini kapattı. Sigarasını içine çekerden çıkarttığı o çıtırtı sesi tüm odada yankılanıyordu sanki. Ev o kadar boş ve sessizdi. Bitmekte olan sigarasını söndürmek için yanındaki sehpadan küllüğe uzandı. Küllüğün içindeki onlarca içilmiş sigaralardan arda kalan izmaritler arasından boş bir yer bulup sigarasını söndürdü.
+
+	Derin bir nefes aldı. Önüne düşen ıslak saçlarını geriye doğru atıp ayağa kalktı. Yatağa doğru yürürken eskimiş tahta parkelerin çıkardıkları sesler ona eşlik ediyordu. Odanın kapısından içeri girince içinde garip bir his oluştu. Eliyle karanlık odayı aydınlatmak için duvardaki anahtarı yokladı. Lamba açılınca gözleri birden kısıldı. Işık huzmeleri sanki gözlerini kör edecekti. Birkaç adım atıp askıya ıslak paltosunu astı yavaşça. Askının yanındaki hafif kirli aynaya yöneldi. Kendi yüzüne baktı. Yorgun, yaşlanmış, sessiz yüzüne. O an anladı artık kendisinden hiçbir şey kalmadığını. Bırakın kendisini, sanırım bu dünyada onun için bir şey kalmamıştı.
+"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gcs" type="AnimationPlayer" parent="."]
+anims/fade_in = SubResource( 2 )
+anims/fade_out = SubResource( 3 )
+
+[connection signal="pressed" from="btn_hikaye1" to="." method="_on_btn_hikaye1_pressed"]

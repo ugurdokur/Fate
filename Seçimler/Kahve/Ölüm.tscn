@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Yazı Tipleri/TIMESBI.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://Yazı Tipleri/bg.png" type="Texture" id=2]
+[ext_resource path="res://Scriptler/Kahve/Ölüm.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 200
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 756.713, 448.66 )
+scale = Vector2( 0.810202, 0.810202 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 573.525
+margin_top = 253.001
+margin_right = 1435.53
+margin_bottom = 574.001
+custom_fonts/font = SubResource( 1 )
+text = "........"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_gec" type="Button" parent="."]
+margin_left = -16.1647
+margin_top = -61.6229
+margin_right = 1821.84
+margin_bottom = 962.378
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="btn_gec" to="." method="_on_btn_gec_pressed"]
